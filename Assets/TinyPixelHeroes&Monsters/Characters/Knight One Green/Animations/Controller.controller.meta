@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 15e0d2149212d684db1d15f005e86193
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 249143
+  packageName: Tiny Pixel Heroes & Monsters - Pack 1
+  packageVersion: 1.0.0
+  assetPath: Assets/TinyPixelHeroes&Monsters/Characters/Knight One Green/Animations/Controller.controller
+  uploadId: 581359

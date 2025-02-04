@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e9074b766904dc478992bfd7acaada2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 249143
+  packageName: Tiny Pixel Heroes & Monsters - Pack 1
+  packageVersion: 1.0.0
+  assetPath: Assets/TinyPixelHeroes&Monsters/Characters/Skeleton Black Mad/Animations/Controller.controller
+  uploadId: 581359

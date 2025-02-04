@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d9d181ed453f75d4caa01c2bd4160997
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 249143
+  packageName: Tiny Pixel Heroes & Monsters - Pack 1
+  packageVersion: 1.0.0
+  assetPath: Assets/TinyPixelHeroes&Monsters/Characters/Orc Tiny Green/Animations/Controller.controller
+  uploadId: 581359

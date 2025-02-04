@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 33b5e7712ce6cd3448d6e6156a6ace4a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 249143
+  packageName: Tiny Pixel Heroes & Monsters - Pack 1
+  packageVersion: 1.0.0
+  assetPath: Assets/TinyPixelHeroes&Monsters/TileMap/TILEMAP_16x16_35.asset
+  uploadId: 581359
