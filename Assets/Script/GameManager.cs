@@ -74,7 +74,6 @@ public partial class GameManager : MonoBehaviour // main
         switch (currentScene)
         {
             case SceneName.Lobby:
-                inventoryPopup = GameObject.Find("Inventory");
                 inventoryPopup.SetActive(false);
                 break;
             case SceneName.InGame:
