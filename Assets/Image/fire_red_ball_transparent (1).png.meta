@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: 63d152b45f4173f45a517b3e7f2f7b80
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2531088068471675840
+    second: fire_red_ball_transparent (1)_0
+  - first:
+      213: -4375554851668595015
+    second: fire_red_ball_transparent (1)_1
+  - first:
+      213: -7563497359385104888
+    second: fire_red_ball_transparent (1)_2
+  - first:
+      213: 2095578076306382680
+    second: fire_red_ball_transparent (1)_3
+  - first:
+      213: 4285104646310807115
+    second: fire_red_ball_transparent (1)_4
+  - first:
+      213: 4382925600489302529
+    second: fire_red_ball_transparent (1)_5
+  - first:
+      213: 4402329038869416061
+    second: fire_red_ball_transparent (1)_6
+  - first:
+      213: -8315116712043997939
+    second: fire_red_ball_transparent (1)_7
+  - first:
+      213: -3922086033380303105
+    second: fire_red_ball_transparent (1)_8
+  - first:
+      213: 2533096136164428212
+    second: fire_red_ball_transparent (1)_9
+  - first:
+      213: 5446053057056477176
+    second: fire_red_ball_transparent (1)_10
+  - first:
+      213: -7635583796472800800
+    second: fire_red_ball_transparent (1)_11
+  - first:
+      213: -9005280477053623999
+    second: fire_red_ball_transparent (1)_12
+  - first:
+      213: 9121666390514161209
+    second: fire_red_ball_transparent (1)_13
+  - first:
+      213: -1739960414806903199
+    second: fire_red_ball_transparent (1)_14
+  - first:
+      213: -6362637601813162249
+    second: fire_red_ball_transparent (1)_15
+  - first:
+      213: -8225152811905922999
+    second: fire_red_ball_transparent (1)_16
+  - first:
+      213: -7714263085093001676
+    second: fire_red_ball_transparent (1)_17
+  - first:
+      213: 6554935248940281901
+    second: fire_red_ball_transparent (1)_18
+  - first:
+      213: -7525411580579122784
+    second: fire_red_ball_transparent (1)_19
+  - first:
+      213: -496858445788263533
+    second: fire_red_ball_transparent (1)_20
+  - first:
+      213: 8525865102256511493
+    second: fire_red_ball_transparent (1)_21
+  - first:
+      213: 6015310080428177156
+    second: fire_red_ball_transparent (1)_22
+  - first:
+      213: -5077808343074018425
+    second: fire_red_ball_transparent (1)_23
+  - first:
+      213: -3169783124212831911
+    second: fire_red_ball_transparent (1)_24
+  - first:
+      213: -5115852701943072619
+    second: fire_red_ball_transparent (1)_25
+  - first:
+      213: -3705959657903960774
+    second: fire_red_ball_transparent (1)_26
+  - first:
+      213: 7758204376804066008
+    second: fire_red_ball_transparent (1)_27
+  - first:
+      213: 5911991353274894950
+    second: fire_red_ball_transparent (1)_28
+  - first:
+      213: 1985558980643751579
+    second: fire_red_ball_transparent (1)_29
+  - first:
+      213: 1671519460386865568
+    second: fire_red_ball_transparent (1)_30
+  - first:
+      213: -5502529504239836996
+    second: fire_red_ball_transparent (1)_31
+  - first:
+      213: 8475953802338067349
+    second: fire_red_ball_transparent (1)_32
+  - first:
+      213: 5516307510872858578
+    second: fire_red_ball_transparent (1)_33
+  - first:
+      213: -5013858986274980011
+    second: fire_red_ball_transparent (1)_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 7
+        width: 905
+        height: 1013
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cbdb70203b302320800000000000000
+      internalID: 2531088068471675840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_1
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1010
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be6e0b8b08e643c0800000000000000
+      internalID: -4375554851668595015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_2
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 991
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80eee3a893f090790800000000000000
+      internalID: -7563497359385104888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_3
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 998
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f9655582df41d10800000000000000
+      internalID: 2095578076306382680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 917
+        width: 39
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b464bbce8ffb77b30800000000000000
+      internalID: 4285104646310807115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_5
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 862
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a6126ac9743dc30800000000000000
+      internalID: 4382925600489302529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_6
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 854
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78c232bfe6381d30800000000000000
+      internalID: 4402329038869416061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_7
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 798
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0514b0e765ca9c80800000000000000
+      internalID: -8315116712043997939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_8
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 788
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe98d16883f199c0800000000000000
+      internalID: -3922086033380303105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_9
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 742
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9cef1d38d572320800000000000000
+      internalID: 2533096136164428212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 738
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff08c5a664449b40800000000000000
+      internalID: 5446053057056477176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_11
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 697
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e9928efdf4f80690800000000000000
+      internalID: -7635583796472800800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_12
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 692
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141657e3e11d60380800000000000000
+      internalID: -9005280477053623999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_13
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 674
+        width: 53
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9365736e04ba69e70800000000000000
+      internalID: 9121666390514161209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_14
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1667130b83b6ad7e0800000000000000
+      internalID: -1739960414806903199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_15
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 671
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f61265dfce53b7a0800000000000000
+      internalID: -6362637601813162249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_16
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 619
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948ca07a8136add80800000000000000
+      internalID: -8225152811905922999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_17
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 621
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4366f15989e61f490800000000000000
+      internalID: -7714263085093001676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_18
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 612
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20b5ce11eec7fa50800000000000000
+      internalID: 6554935248940281901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_19
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 605
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a178fee90e509790800000000000000
+      internalID: -7525411580579122784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_20
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 591
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b432340edca19f0800000000000000
+      internalID: -496858445788263533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_21
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 565
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a16e67325f15670800000000000000
+      internalID: 8525865102256511493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_22
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 545
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4077fbdc5acaa7350800000000000000
+      internalID: 6015310080428177156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_23
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 517
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78bee8127300889b0800000000000000
+      internalID: -5077808343074018425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_24
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 511
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9592442fa0ba204d0800000000000000
+      internalID: -3169783124212831911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_25
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 488
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598f5719217d009b0800000000000000
+      internalID: -5115852701943072619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_26
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 168
+        width: 114
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3dc4be7359c19cc0800000000000000
+      internalID: -3705959657903960774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_27
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 154
+        width: 146
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d28946a6cdaaab60800000000000000
+      internalID: 7758204376804066008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_28
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 115
+        width: 87
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a812f00dc9b0250800000000000000
+      internalID: 5911991353274894950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_29
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 155
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b968bd97f5f1e8b10800000000000000
+      internalID: 1985558980643751579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_30
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 137
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a10387d71e623710800000000000000
+      internalID: 1671519460386865568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_31
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 133
+        width: 89
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0adadc19613a3b0800000000000000
+      internalID: -5502529504239836996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_32
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 103
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5936bf06313a0a570800000000000000
+      internalID: 8475953802338067349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_33
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 73
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df5569547cdd8c40800000000000000
+      internalID: 5516307510872858578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fire_red_ball_transparent (1)_34
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 59
+        width: 34
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ffd2901d13b6ab0800000000000000
+      internalID: -5013858986274980011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fire_red_ball_transparent (1)_0: 2531088068471675840
+      fire_red_ball_transparent (1)_1: -4375554851668595015
+      fire_red_ball_transparent (1)_10: 5446053057056477176
+      fire_red_ball_transparent (1)_11: -7635583796472800800
+      fire_red_ball_transparent (1)_12: -9005280477053623999
+      fire_red_ball_transparent (1)_13: 9121666390514161209
+      fire_red_ball_transparent (1)_14: -1739960414806903199
+      fire_red_ball_transparent (1)_15: -6362637601813162249
+      fire_red_ball_transparent (1)_16: -8225152811905922999
+      fire_red_ball_transparent (1)_17: -7714263085093001676
+      fire_red_ball_transparent (1)_18: 6554935248940281901
+      fire_red_ball_transparent (1)_19: -7525411580579122784
+      fire_red_ball_transparent (1)_2: -7563497359385104888
+      fire_red_ball_transparent (1)_20: -496858445788263533
+      fire_red_ball_transparent (1)_21: 8525865102256511493
+      fire_red_ball_transparent (1)_22: 6015310080428177156
+      fire_red_ball_transparent (1)_23: -5077808343074018425
+      fire_red_ball_transparent (1)_24: -3169783124212831911
+      fire_red_ball_transparent (1)_25: -5115852701943072619
+      fire_red_ball_transparent (1)_26: -3705959657903960774
+      fire_red_ball_transparent (1)_27: 7758204376804066008
+      fire_red_ball_transparent (1)_28: 5911991353274894950
+      fire_red_ball_transparent (1)_29: 1985558980643751579
+      fire_red_ball_transparent (1)_3: 2095578076306382680
+      fire_red_ball_transparent (1)_30: 1671519460386865568
+      fire_red_ball_transparent (1)_31: -5502529504239836996
+      fire_red_ball_transparent (1)_32: 8475953802338067349
+      fire_red_ball_transparent (1)_33: 5516307510872858578
+      fire_red_ball_transparent (1)_34: -5013858986274980011
+      fire_red_ball_transparent (1)_4: 4285104646310807115
+      fire_red_ball_transparent (1)_5: 4382925600489302529
+      fire_red_ball_transparent (1)_6: 4402329038869416061
+      fire_red_ball_transparent (1)_7: -8315116712043997939
+      fire_red_ball_transparent (1)_8: -3922086033380303105
+      fire_red_ball_transparent (1)_9: 2533096136164428212
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

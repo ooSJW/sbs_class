@@ -44,8 +44,14 @@ namespace IndieMarc.TopDown
 
         private static Dictionary<int, PlayerCharacter> character_list = new Dictionary<int, PlayerCharacter>();
 
+        GameManager gameMng;
+        PlayManager playMng;
+
         void Awake()
         {
+            gameMng = GameObject.Find("GameManager").GetComponent<GameManager>();
+            playMng = GameObject.Find("PlayManager").GetComponent<PlayManager>();
+
             character_list[player_id] = this;
             rigid = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
@@ -77,6 +83,27 @@ namespace IndieMarc.TopDown
             //Move
             rigid.linearVelocity = move;
             
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("오브젝트와 충돌");
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            Debug.Log("오브젝트와 충돌");
+
+            // playerPrefs에 아이템 저장
+
+            // 현재 저장된 마지막 itemID 를 playerprefs에 있는지 체크
+            int newitemID = gameMng.prefsManager.LastSavedItemCheck();
+            // TODO csv에 기록된 item 종류 번호(101,201)도 같이 playerprefs에 저장해야 한다.
+
+            // 현재 드롭된 아이템 번호 가져오기
+            int itemnum = playMng.CurrentDropItemNumber();
+
+            gameMng.prefsManager.SaveItem(newitemID, itemnum);
         }
 
         //Handle render and controls

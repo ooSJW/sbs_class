@@ -367,6 +367,8 @@ GameObject:
   - component: {fileID: 7872554660150688909}
   - component: {fileID: 5661700032734397215}
   - component: {fileID: 7872554660150688910}
+  - component: {fileID: 7872554660150688912}
+  - component: {fileID: 7872554660150688911}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -696,7 +698,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6045235674028870251, guid: 7ed010a2b51d0fb4f9fee6a47b1334fd,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -718,6 +721,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e0ec329eb06d6f429beab249feb144b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7872554660150688911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965584402337311102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9745ceec199e4d54bad0abd88b463397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &7872554660150688912
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965584402337311102}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8006878303780145456
 GameObject:
   m_ObjectHideFlags: 0

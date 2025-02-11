@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|c:\\users\\game\\desktop\\gittest\\sbs_class\\assets\\script\\csvloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\csvloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\assets\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|c:\\users\\game\\desktop\\gittest\\sbs_class\\assets\\script\\lobbybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\assets\\script\\playmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\assets\\script\\lobbybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\lobbybutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\assets\\script\\playerprefsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\playerprefsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\assets\\script\\csvloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A300F054-9277-CAB7-B090-D6950A30F1F4}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\csvloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,32 +38,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "PlayManager.cs",
+              "DocumentMoniker": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\PlayManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\PlayManager.cs",
+              "ToolTip": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\PlayManager.cs",
+              "RelativeToolTip": "Assets\\Script\\PlayManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T05:41:32.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "CsvLoadManager.cs",
               "DocumentMoniker": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\CsvLoadManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\CsvLoadManager.cs",
               "ToolTip": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\CsvLoadManager.cs",
               "RelativeToolTip": "Assets\\Script\\CsvLoadManager.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAcwG0AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwFEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T05:24:39.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\GameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\GameManager.cs",
-              "ToolTip": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\GameManager.cs",
-              "RelativeToolTip": "Assets\\Script\\GameManager.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwCoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T05:10:27.016Z",
+              "WhenOpened": "2025-02-04T05:24:39.804Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameManager.cs",
+              "ToolTip": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Script\\GameManager.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T05:10:27.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LobbyButton.cs",
               "DocumentMoniker": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\LobbyButton.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\LobbyButton.cs",
@@ -67,12 +83,11 @@
               "RelativeToolTip": "Assets\\Script\\LobbyButton.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T05:10:13.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-04T05:10:13.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PlayerPrefsManager.cs",
               "DocumentMoniker": "C:\\Users\\game\\Desktop\\GitTest\\sbs_class\\Assets\\Script\\PlayerPrefsManager.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\PlayerPrefsManager.cs",

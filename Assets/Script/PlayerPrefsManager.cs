@@ -1,54 +1,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class PlayerPrefsManager : MonoBehaviour // Data Field
+public class PlayerPrefsManager : MonoBehaviour
 {
-    private const string itemKey = "SavedItems";
+    private const string ItemsKey = "SavedItems";
+    private const string GoldKey = "SavedGold";
+    public int Gold { get; private set; }
+    // 아이템을 저장하는 구조체
     public struct Item
     {
-        public int number; // 아이템 저장번호
-        public int id; // 아이템 고유 번호
+        public int Id; // 내가 소유하고 있는 아이템 번호
+        public int Type; // 아이템 종류 번호 - 아이콘, 아이템의 능력치
 
         public override string ToString()
         {
-            return $"{number}:{id}";
+            return $"{Id}:{Type}";
         }
 
         public static Item FromString(string data)
         {
             string[] parts = data.Split(':');
-            if (parts.Length == typeof(Item).GetFields().Length
-                &&
-                int.TryParse(parts[0], out int idValue)
-                &&
-                int.TryParse(parts[1], out int numberValue))
+            if (parts.Length == 2 &&
+                int.TryParse(parts[0], out int id) &&
+                int.TryParse(parts[1], out int type))
             {
-                return new Item { number = numberValue, id = idValue };
+                return new Item { Id = id, Type = type };
             }
+
             return default;
         }
-    }
-
-    private HashSet<Item> itemHashSet = new HashSet<Item>();
-}
-public partial class PlayerPrefsManager : MonoBehaviour // Initialize
-{
-    private void Allocate()
-    {
 
     }
-    public void Initialize()
-    {
-        Allocate();
-        Setup();
-    }
-    private void Setup()
-    {
 
+    HashSet<Item> items = new HashSet<Item>();
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        LoadGold();
     }
-}
-public partial class PlayerPrefsManager : MonoBehaviour // 
-{
+
     public int LastSavedItemCheck()
     {
         int LastitemID = GetLastItemNumber();
@@ -59,7 +50,7 @@ public partial class PlayerPrefsManager : MonoBehaviour //
     {
         HashSet<Item> savedItems = LoadItems();
 
-        Item newItem = new Item { number = itemId, id = itemType };
+        Item newItem = new Item { Id = itemId, Type = itemType };
 
         if (savedItems.Contains(newItem))
         {
@@ -68,7 +59,7 @@ public partial class PlayerPrefsManager : MonoBehaviour //
         }
 
         savedItems.Add(newItem);
-        PlayerPrefs.SetString(itemKey, string.Join(",", savedItems));
+        PlayerPrefs.SetString(ItemsKey, string.Join(",", savedItems));
         PlayerPrefs.Save();
 
         Debug.Log($"Item {itemId} saved successfully.");
@@ -76,20 +67,23 @@ public partial class PlayerPrefsManager : MonoBehaviour //
 
     public HashSet<Item> GetItemListInfo()
     {
-        if (itemHashSet.Count == 0)
+        if (items.Count == 0)
             LoadItems();
 
-        foreach (Item itemInfo in itemHashSet)
+        foreach (Item itemInfo in items)
         {
-            Debug.Log("saved itemID : " + itemInfo.number);
+            Debug.Log("saved itemID : " + itemInfo.Id + " type : " + itemInfo.Type);
         }
 
-        return itemHashSet;
+        return items;
     }
 
     HashSet<Item> LoadItems()
     {
-        string savedData = PlayerPrefs.GetString(itemKey, string.Empty);
+        // ItemsKey = "SavedItems";
+        string savedData = PlayerPrefs.GetString(ItemsKey, string.Empty);
+
+        Debug.Log("saveditemLowinfo : " + savedData);
 
         if (string.IsNullOrEmpty(savedData))
         {
@@ -102,13 +96,13 @@ public partial class PlayerPrefsManager : MonoBehaviour //
         foreach (string itemString in itemStrings)
         {
             Item item = Item.FromString(itemString);
-            if (item.number != 0 || item.id != 0)
+            if (item.Id != 0 || item.Type != 0)
             {
-                itemHashSet.Add(item);
+                items.Add(item);
             }
         }
 
-        return itemHashSet;
+        return items;
     }
 
     public int GetLastItemNumber()
@@ -125,15 +119,59 @@ public partial class PlayerPrefsManager : MonoBehaviour //
 
         foreach (Item item in savedItems)
         {
-            Debug.Log("saved itemID : " + item.number);
+            Debug.Log("saved itemID : " + item.Id);
 
-            if (item.number > maxItemNumber)
+            if (item.Id > maxItemNumber)
             {
-                maxItemNumber = item.number;
+                maxItemNumber = item.Id;
             }
         }
 
         Debug.Log($"Last saved item number: {maxItemNumber}");
         return maxItemNumber;
+    }
+
+    // 골드 획득
+    public void AddGold(int amount)
+    {
+        Gold += amount;
+        SaveGold();
+    }
+
+    // 골드 사용
+    public bool SpendGold(int amount)
+    {
+        if (Gold >= amount)
+        {
+            Gold = amount;
+            SaveGold();
+            return true;
+        }
+        return false;
+    }
+
+    // 골드 저장
+    private void SaveGold()
+    {
+        PlayerPrefs.SetInt(GoldKey, Gold);
+        PlayerPrefs.Save();
+    }
+
+    // 골드 불러오기
+    private void LoadGold()
+    {
+        Gold = PlayerPrefs.GetInt(GoldKey, 0);
+    }
+
+    public void ResetGold()
+    {
+        PlayerPrefs.DeleteKey(GoldKey);
+        Gold = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 }

@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 13fde35df00f2384598d84d32a7bacd8
+labels:
+- skybox
+- skycube
+- sky
+- sky5X
+- free
+- night
+- space
+- atmosphere
+- day
+- dusk
+- sunset
+- sunrise
+- dawn
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 6332
+  packageName: Sky5X One
+  packageVersion: 1
+  assetPath: Assets/sky5X/sky5X_skyboxes/sky5X4.mat
+  uploadId: 11692
