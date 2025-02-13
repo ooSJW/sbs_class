@@ -12,6 +12,8 @@ namespace IndieMarc.TopDown
 {
     public class PlayerCharacter : MonoBehaviour
     {
+        public VariableJoystick joystick;
+
         public int player_id;
 
         [Header("Stats")]
@@ -80,6 +82,11 @@ namespace IndieMarc.TopDown
             float accelerationY = Mathf.Abs(move_input.y) > 0.1f ? move_accel : move_deccel;
             move.y = Mathf.MoveTowards(move.y, desiredSpeedY, accelerationY * Time.fixedDeltaTime);
 
+            float speed = 2.5f;
+
+            move.x = joystick.Direction.x * speed ;
+            move.y = joystick.Direction.y * speed ;
+
             //Move
             rigid.linearVelocity = move;
             
@@ -104,6 +111,8 @@ namespace IndieMarc.TopDown
             int itemnum = playMng.CurrentDropItemNumber();
 
             gameMng.prefsManager.SaveItem(newitemID, itemnum);
+
+            playMng.treatureObject.SetActive(false);
         }
 
         //Handle render and controls

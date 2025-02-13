@@ -42,13 +42,13 @@ namespace IndieMarc.TopDown
             action_hold = false;
             action_press = false;
 
-            if (Input.GetKey(left_key))
+            if (Input.GetKey(KeyCode.LeftArrow))
                 move += -Vector2.right;
-            if (Input.GetKey(right_key))
+            if (Input.GetKey(KeyCode.RightArrow))
                 move += Vector2.right;
-            if (Input.GetKey(up_key))
+            if (Input.GetKey(KeyCode.UpArrow))
                 move += Vector2.up;
-            if (Input.GetKey(down_key))
+            if (Input.GetKey(KeyCode.DownArrow))
                 move += -Vector2.up;
             if (Input.GetKey(action_key))
                 action_hold = true;
