@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class PlayManager : MonoBehaviour
 {
     //PlayerHP
-    int playerHP;
-    Slider playerHP_bar;
+    int playerHP; //GameManager를 통해 초기 값 설정 필요
+    public Slider playerHP_bar;
     //MonsterHP
-    int monsterHP;
-    Slider monsterHP_bar;
+    int monsterHP; //GameManager를 통해 초기 값 설정 필요
+    public Slider monsterHP_bar;
 
     // 보물상자 , 번호
     public GameObject treatureObject;
@@ -21,17 +21,66 @@ public class PlayManager : MonoBehaviour
     public MonsterManager monster_mng;
     private int curMonsterID = 1;
 
+    public static PlayManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    int playerHP_MAX = 15;
+    int monsterHP_MAX = 10;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         game_mng = GameObject.Find("GameManager").GetComponent<GameManager>();
         curMonsterID = monster_mng.RandomMonsterAttack(game_mng.csvloadManager);
 
+        playerHP = 15;
+        monsterHP = 10;
+
         AddExp();
         StartCoroutine(ItemDropCo());
         //DropItem();
         AddItem();
         DoQuest();
+    }
+
+    public void SetPlayerHP(int Damage)
+    {
+        playerHP -= Damage;
+        float val = 1.0f;
+        if (playerHP <= 0)
+        {
+            val = 0;
+            playerHP = 0;
+        }
+        else
+            val = (float)playerHP / (float)playerHP_MAX;
+
+        playerHP_bar.value = val;
+        playerHP_bar.GetComponent<SliderNum>().SetNum(playerHP, playerHP_MAX);
+    }
+
+    public void SetMonsterHP(int Damage)
+    {
+        monsterHP -= Damage;
+        float val = 1.0f;
+        if (monsterHP <= 0)
+        {
+            val = 0;
+            monsterHP = 0;
+            DropItem();
+        }
+        else
+            val = (float)monsterHP / (float)monsterHP_MAX;
+
+        monsterHP_bar.value = val;
+        monsterHP_bar.GetComponent<SliderNum>().SetNum(monsterHP, monsterHP_MAX);
     }
 
     public int CurrentDropItemNumber()
@@ -48,7 +97,7 @@ public class PlayManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
 
-        DropItem();
+        //DropItem();
     }
 
     public void DropItem()

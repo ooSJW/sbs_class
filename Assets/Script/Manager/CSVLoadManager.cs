@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class ItemInfo
@@ -38,6 +37,14 @@ public class QuestInfo
 
 }
 
+public class ShopItemInfo
+{
+    public int ID;
+    public string name;
+    public string itemID;
+    public int price;
+}
+
 public class CSVLoadManager : MonoBehaviour
 {
     private List<List<string>> csvData = new List<List<string>>();
@@ -46,6 +53,7 @@ public class CSVLoadManager : MonoBehaviour
     private List<MonsterInfo> monsterInfo = new List<MonsterInfo>();// 몬스터 정보
     private List<RatioInfo> ratioInfo = new List<RatioInfo>();      // 확률 정보
     private List<QuestInfo> questInfo = new List<QuestInfo>();      // 퀘스트 정보
+    private List<ShopItemInfo> shopitemInfo = new List<ShopItemInfo>(); // 샵 아이템 정보
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -58,7 +66,8 @@ public class CSVLoadManager : MonoBehaviour
         LoadDropRatioCsv();
         // 퀘스트 정보 읽어오기
         LoadQuestCsv();
-        
+        // 샵 아이템 정보 읽어오기
+        LoadShopItemCsv();
     }
 
     public List<ItemInfo> GetItemList()
@@ -81,6 +90,11 @@ public class CSVLoadManager : MonoBehaviour
     public List<RatioInfo> GetRatioInfoList()
     {
         return ratioInfo;
+    }
+
+    public List<ShopItemInfo> GetShopitemInfoList()
+    {
+        return shopitemInfo;
     }
 
     void LoadItemCsv()
@@ -130,6 +144,32 @@ public class CSVLoadManager : MonoBehaviour
                 }
                 field_num++;
             }
+        });
+    }
+
+    void LoadShopItemCsv()
+    {
+        LoadCsv("Shop", shopitemInfo, (row, info) =>
+        {
+            ShopItemInfo shopiteminfo = info as ShopItemInfo;
+            if (shopiteminfo == null) return;
+
+            int field_num = 0;
+            foreach (string field in row)
+            {
+                Debug.Log("field : " + field);
+                switch (field_num)
+                {
+                    // 필요한 데이터 파싱 추가
+                    case 0: shopiteminfo.ID = int.Parse(field); break;
+                    case 1: shopiteminfo.name = field; break;
+                    case 2: shopiteminfo.itemID = field; break;
+                    case 3: shopiteminfo.price = int.Parse(field); break;
+
+                }
+                field_num++;
+            }
+
         });
     }
 

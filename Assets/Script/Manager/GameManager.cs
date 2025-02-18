@@ -9,15 +9,14 @@ public enum eScene
     INGAME,
 }
 
-class InventoryItemInfo
-{
-
-}
-
 class MyCharState
 {
     int Level;
     int Exp;
+    int HP;
+    int Att;
+    float Att_Speed;
+    int Def;
 }
 
 public class GameManager : MonoBehaviour
@@ -29,6 +28,7 @@ public class GameManager : MonoBehaviour
     public CSVLoadManager csvloadManager;
     public PlayerPrefsManager prefsManager;
     public ItemIconResource itemIconResource;
+    public ShopIconResource shopIconResource;
 
     eScene currenScene = eScene.LOBBY;
 
@@ -39,15 +39,16 @@ public class GameManager : MonoBehaviour
     Dictionary<UIElement, RefreshElement> UI_ElementList 
         = new Dictionary<UIElement, RefreshElement>();
 
-    private GameObject inventoryPopup;
-    public GameObject item_prefab; // 인벤토리 스크롤에 표시할 아이템 프리팹
-    public RectTransform content; // 프리팹이 연결될 부모 오브젝트
-    private GameObject iteminfoPopup;
-    private GameObject dungeonSelectPopup;
-    private GameObject questPopup;
+    //private GameObject inventoryPopup;
+    //private GameObject iteminfoPopup;
+    //private GameObject dungeonSelectPopup;
+    //private GameObject questPopup;
+    //private GameObject shopPopup;
+    
+    
     public static GameManager Instance { get; private set; }
 
-    public PopupInstance popup_Inst;
+    //public PopupInstance popup_Inst;
 
     private void Awake()
     {
@@ -87,34 +88,7 @@ public class GameManager : MonoBehaviour
         UI_ElementList[element].RefreshUI();
     }
 
-    public void ResetPopupInstance()
-    {
-        if (currenScene == eScene.LOBBY)
-        {
-            GameObject popinst = GameObject.Find("PopupInst");
-            popup_Inst = popinst.GetComponent<PopupInstance>();
-
-            inventoryPopup = popup_Inst.inventoryPopup;
-            if (inventoryPopup != null) inventoryPopup.SetActive(false);
-
-            content = popup_Inst.inventoryListContent.GetComponent<RectTransform>();
-
-            iteminfoPopup = popup_Inst.iteminfoPopup;
-            if (iteminfoPopup != null) iteminfoPopup.SetActive(false);
-
-            dungeonSelectPopup = popup_Inst.DungeonSelectPopup;
-            if (dungeonSelectPopup != null) dungeonSelectPopup.SetActive(false);
-
-            questPopup = popup_Inst.questPopup;
-            if (questPopup != null) questPopup.SetActive(false);
-
-            Debug.Log("current Scene Lobby");
-        }
-        else if (currenScene == eScene.INGAME)
-        {
-            Debug.Log("current Scene Ingame");
-        }
-    }
+    
 
     public Sprite GetItemTypeSprite(int type)
     {
@@ -137,98 +111,18 @@ public class GameManager : MonoBehaviour
         return itemIconResource.iconArray[icon];
     }
 
-    public void RefreshInventory()
+    public Sprite GetShoptypeSprite(int itemID)
     {
-        HashSet<PlayerPrefsManager.Item> inventoryList = prefsManager.GetItemListInfo();
-        foreach (Transform child in content)
+        int icon = 0;
+        switch (itemID)
         {
-            Destroy(child.gameObject);
-        }
-        
-        foreach (PlayerPrefsManager.Item item in inventoryList)
-        {
-            if (item.Type == 0) continue;
-
-            GameObject itemobj = Instantiate(item_prefab);
-            itemobj.transform.GetChild(0).
-                GetComponent<Image>().sprite = GetItemTypeSprite(item.Type);
-
-            // 아이템의 종류 번호 셋팅
-            itemobj.GetComponent<ItemInfoBtn>().SetItemType(item.Type);
-            // 아이템 제거를 위한 아이템 소유 번호 셋팅
-            itemobj.GetComponent<ItemInfoBtn>().SetItemOwnId(item.Id);
-
-            ItemInfo info = csvloadManager.FindItemInfo(item.Type);
-            itemobj.transform.GetChild(0).GetChild(0).
-                GetComponent<Text>().text = info.name;
-
-            itemobj.transform.parent = content;
-
-            itemobj.transform.localScale = new Vector3(1, 1, 1);
+            case 101: icon = 0; break;
+            case 102: icon = 1; break;
         }
 
+        return shopIconResource.iconArray[icon];
     }
-
-    public void InventoryPopupOpen()
-    {
-        // 2번 아이템 제거 테스트
-        //prefsManager.RemoveItem(2);
-
-        // csv정보 매니저에서 가져오기
-        List<ItemInfo> itemList = csvloadManager.GetItemList();
-
-        foreach (ItemInfo info in itemList)
-        {
-            //Debug.Log("item_number : " + info.item_number +" ability : "+ info.ability);
-        }
-
-        
-
-        // playerPrefs에 내가 소유한 아이템 정보 가져오기
-        HashSet<PlayerPrefsManager.Item> inventoryList = prefsManager.GetItemListInfo();
-
-        /*foreach(Transform child in content)
-        {
-            Destroy(child.gameObject);
-        }*/
-
-        if (content.childCount <= 0)
-        {
-            foreach (PlayerPrefsManager.Item item in inventoryList)
-            {
-                if (item.Type == 0) continue;
-
-                GameObject itemobj = Instantiate(item_prefab);
-                itemobj.transform.GetChild(0).
-                    GetComponent<Image>().sprite = GetItemTypeSprite(item.Type);
-
-                // 아이템의 종류 번호 셋팅
-                itemobj.GetComponent<ItemInfoBtn>().SetItemType(item.Type);
-                // 아이템 제거를 위한 아이템 소유 번호 셋팅
-                itemobj.GetComponent<ItemInfoBtn>().SetItemOwnId(item.Id);
-
-                ItemInfo info = csvloadManager.FindItemInfo(item.Type);
-                itemobj.transform.GetChild(0).GetChild(0).
-                    GetComponent<Text>().text = info.name;
-
-                itemobj.transform.parent = content;
-
-                itemobj.transform.localScale = new Vector3(1, 1, 1);
-            }
-        }
-
-        // 내가 소유한 아이템을 csv정보로 셋팅
-
-        // UI 아이템 팝업 연동하기
-
-        inventoryPopup.SetActive(true);
-    }
-
-    public void DungeonSelectPopupOpen()
-    {
-        dungeonSelectPopup.SetActive(true);
-    }
-
+    
     public void AddItem(GameObject item)
     {
         // PlayerPrefs에 아이템 저장

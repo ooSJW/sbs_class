@@ -49,6 +49,9 @@ namespace IndieMarc.TopDown
         GameManager gameMng;
         PlayManager playMng;
 
+        public Camera main_camera;
+        public RectTransform playerHP;
+
         void Awake()
         {
             gameMng = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -92,32 +95,41 @@ namespace IndieMarc.TopDown
             
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("오브젝트와 충돌");
+            //Debug.Log("오브젝트와 충돌");
+
+            if (collision.CompareTag("Treasure"))
+            {
+                // playerPrefs에 아이템 저장
+
+                // 현재 저장된 마지막 itemID 를 playerprefs에 있는지 체크
+                int newitemID = gameMng.prefsManager.LastSavedItemCheck();
+                // TODO csv에 기록된 item 종류 번호(101,201)도 같이 playerprefs에 저장해야 한다.
+
+                // 현재 드롭된 아이템 번호 가져오기
+                int itemnum = playMng.CurrentDropItemNumber();
+
+                gameMng.prefsManager.SaveItem(newitemID, itemnum);
+
+                playMng.treatureObject.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("character Ball 충돌");
+                PlayManager.Instance.SetPlayerHP(1);
+            }
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            Debug.Log("오브젝트와 충돌");
-
-            // playerPrefs에 아이템 저장
-
-            // 현재 저장된 마지막 itemID 를 playerprefs에 있는지 체크
-            int newitemID = gameMng.prefsManager.LastSavedItemCheck();
-            // TODO csv에 기록된 item 종류 번호(101,201)도 같이 playerprefs에 저장해야 한다.
-
-            // 현재 드롭된 아이템 번호 가져오기
-            int itemnum = playMng.CurrentDropItemNumber();
-
-            gameMng.prefsManager.SaveItem(newitemID, itemnum);
-
-            playMng.treatureObject.SetActive(false);
-        }
+        
 
         //Handle render and controls
         void Update()
         {
+            Vector3 screenPos = main_camera.WorldToScreenPoint(transform.position);
+            screenPos.y += 80.0f;
+            playerHP.position = screenPos;
+
             hit_timer += Time.deltaTime;
             move_input = Vector2.zero;
 

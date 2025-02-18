@@ -6,6 +6,11 @@ public class MonsterManager : MonoBehaviour
 {
     public GameObject[] monsters;
 
+    public Camera main_camera;
+    public RectTransform monsterHP;
+
+    private Monster cur_monster;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -55,6 +60,11 @@ public class MonsterManager : MonoBehaviour
         Debug.Log("MonsterNumber : " + mon_idx);
 
         monsters[(mon_idx - 1)].SetActive(true);
+
+        Vector3 screenPos = main_camera.WorldToScreenPoint(monsters[(mon_idx - 1)].transform.position);
+        screenPos.y += 80.0f;
+        monsterHP.position = screenPos;
+
 
         return mon_idx;
     }

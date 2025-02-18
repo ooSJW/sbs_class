@@ -16,7 +16,7 @@ public class InventoryPopup : RefreshElement
 
     override public void RefreshUI()
     {
-        GameManager.Instance.RefreshInventory();
+        PopupInstance.Instance.RefreshInventory();
     }
 
     public void CloseBtn()
