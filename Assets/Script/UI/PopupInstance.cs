@@ -3,15 +3,29 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum popup_index
+{
+    INVEN_POPUP = 0,
+    INVEN_ITEM_POPUP,
+    SHOP_POPUP,
+    SHOP_ITEM_POPUP,
+    DUNGEON_SELECT_POPUP,
+    QUEST_POPUP,
+    OPTION_POPUP,
+}
+
 public class PopupInstance : MonoBehaviour
 {
     // Lobby 에 가지고 있는 팝업 UI
-    public GameObject inventoryPopup;
-    public GameObject inventoryitemPopup;
-    public GameObject shopPopup;
-    public GameObject shopitemPopup;
-    public GameObject dungeonSelectPopup;
-    public GameObject questPopup;
+    //public GameObject inventoryPopup;
+    //public GameObject inventoryitemPopup;
+    //public GameObject shopPopup;
+    //public GameObject shopitemPopup;
+    //public GameObject dungeonSelectPopup;
+    //public GameObject questPopup;
+    //public GameObject optionPopup;
+
+    public GameObject[] popups;
 
     public RectTransform inventoryListcontent; // 프리팹이 연결될 부모 오브젝트
     public GameObject item_prefab; // 인벤토리 스크롤에 표시할 아이템 프리팹
@@ -30,6 +44,11 @@ public class PopupInstance : MonoBehaviour
         }
     }
 
+    public GameObject GetPopup(popup_index index)
+    {
+        return popups[(int)index];
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,18 +59,30 @@ public class PopupInstance : MonoBehaviour
 
     void ResetPopupInstance()
     {
+        /*
         if (inventoryPopup != null) inventoryPopup.SetActive(false);
         if (inventoryitemPopup != null) inventoryitemPopup.SetActive(false);
         if (shopPopup != null) shopPopup.SetActive(false);
         if (shopitemPopup != null) shopitemPopup.SetActive(false);
         if (dungeonSelectPopup != null) dungeonSelectPopup.SetActive(false);
         if (questPopup != null) questPopup.SetActive(false);
-        
+        */
+
+        for( int i = 0; i < popups.Length; i++)
+        {
+            if (popups[i] != null) popups[i].SetActive(false);
+        }
     }
 
     public void DungeonSelectPopupOpen()
     {
-        dungeonSelectPopup.SetActive(true);
+        //dungeonSelectPopup.SetActive(true);
+        popups[(int)popup_index.DUNGEON_SELECT_POPUP].SetActive(true);
+    }
+
+    public void OptionPopupOpen()
+    {
+        popups[(int)popup_index.OPTION_POPUP].SetActive(true);
     }
 
     public void RefreshInventory()
@@ -138,7 +169,8 @@ public class PopupInstance : MonoBehaviour
 
         // UI 아이템 팝업 연동하기
 
-        inventoryPopup.SetActive(true);
+        //inventoryPopup.SetActive(true);
+        popups[(int)popup_index.INVEN_POPUP].SetActive(true);
     }
 
     public void ShopPopupOpen()
@@ -168,7 +200,8 @@ public class PopupInstance : MonoBehaviour
             }
         }
 
-        shopPopup.SetActive(true);
+        //shopPopup.SetActive(true);
+        popups[(int)popup_index.SHOP_POPUP].SetActive(true);
     }
 
     static public void ShowPopup(GameObject showObject, Action SetInfo)

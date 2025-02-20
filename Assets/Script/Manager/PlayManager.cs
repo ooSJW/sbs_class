@@ -50,6 +50,16 @@ public class PlayManager : MonoBehaviour
         DoQuest();
     }
 
+    public int GetPlayerHP()
+    {
+        return playerHP;
+    }
+
+    public int GetMonsterHP()
+    {
+        return monsterHP;
+    }
+
     public void SetPlayerHP(int Damage)
     {
         playerHP -= Damage;
@@ -66,8 +76,9 @@ public class PlayManager : MonoBehaviour
         playerHP_bar.GetComponent<SliderNum>().SetNum(playerHP, playerHP_MAX);
     }
 
-    public void SetMonsterHP(int Damage)
+    public bool SetMonsterHP(int Damage)
     {
+        bool deadMonster = false;
         monsterHP -= Damage;
         float val = 1.0f;
         if (monsterHP <= 0)
@@ -75,12 +86,15 @@ public class PlayManager : MonoBehaviour
             val = 0;
             monsterHP = 0;
             DropItem();
+            deadMonster = true;
         }
         else
             val = (float)monsterHP / (float)monsterHP_MAX;
 
         monsterHP_bar.value = val;
         monsterHP_bar.GetComponent<SliderNum>().SetNum(monsterHP, monsterHP_MAX);
+
+        return deadMonster;
     }
 
     public int CurrentDropItemNumber()

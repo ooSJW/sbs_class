@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 96d91ded6363c2e47b0ad8b7416a2ad6
+timeCreated: 1446803441
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 49399
+  packageName: ALL 2.5D 84 type character pack
+  packageVersion: 1.0
+  assetPath: Assets/CharacterPack/Sample/SampleAnimatorGoblin.controller
+  uploadId: 94043

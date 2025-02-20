@@ -19,10 +19,7 @@ public class InventoryPopup : RefreshElement
         PopupInstance.Instance.RefreshInventory();
     }
 
-    public void CloseBtn()
-    {
-        gameObject.SetActive(false);
-    }
+    
 
     // Update is called once per frame
     void Update()

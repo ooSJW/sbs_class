@@ -26,8 +26,10 @@ public class MonsterManager : MonoBehaviour
 
         int grade = 5; // 기본적으로 5등급 (가장 높은 확률)로 설정
 
-        
-        foreach( RatioInfo info in ratioinfo_list)
+        foreach (GameObject monster in monsters)
+            monster.SetActive(false);
+
+        foreach ( RatioInfo info in ratioinfo_list)
         {
             if (randomNum < info._1)
             {

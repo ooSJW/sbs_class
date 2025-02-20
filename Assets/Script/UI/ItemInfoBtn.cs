@@ -26,8 +26,10 @@ public class ItemInfoBtn : MonoBehaviour
         Debug.Log("ItemType: " + ItemType);
         Debug.Log("OwnID: " + Id);
 
-        GameObject ShowObj = PopupInstance.Instance.inventoryitemPopup;
-        
+        //GameObject ShowObj = PopupInstance.Instance.inventoryitemPopup;
+        GameObject ShowObj = PopupInstance.Instance.GetPopup(popup_index.INVEN_ITEM_POPUP);
+
+
         PopupInstance.ShowPopup(ShowObj, () => {
 
             ItemInfoPopup popup = ShowObj.GetComponent<ItemInfoPopup>();

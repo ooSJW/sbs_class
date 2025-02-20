@@ -24,6 +24,11 @@ public class LobbyBtn : MonoBehaviour
         popup_inst.DungeonSelectPopupOpen();
     }
 
+    public void OptionPopupOpen()
+    {
+        popup_inst.OptionPopupOpen();
+    }
+
     // Update is called once per frame
     void Update()
     {

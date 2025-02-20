@@ -12,8 +12,12 @@ public class Monster : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("monster Ball 충돌");
-        PlayManager.Instance.SetMonsterHP(1);
+        if (collision.CompareTag("characterFire"))
+        {
+            Debug.Log("monster Ball 충돌");
+            bool dead = PlayManager.Instance.SetMonsterHP(1);
+            if (dead == true) this.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

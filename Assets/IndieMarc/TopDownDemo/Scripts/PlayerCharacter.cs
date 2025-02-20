@@ -116,8 +116,11 @@ namespace IndieMarc.TopDown
             }
             else
             {
-                Debug.Log("character Ball 충돌");
-                PlayManager.Instance.SetPlayerHP(1);
+                if (collision.CompareTag("monsterFire"))
+                {
+                    //Debug.Log("character Ball 충돌");
+                    PlayManager.Instance.SetPlayerHP(1);
+                }
             }
         }
 

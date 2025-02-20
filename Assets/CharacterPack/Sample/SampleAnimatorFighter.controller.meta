@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a6aa09bf111d5b44f82c4248e4f54b1b
+timeCreated: 1446776482
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 49399
+  packageName: ALL 2.5D 84 type character pack
+  packageVersion: 1.0
+  assetPath: Assets/CharacterPack/Sample/SampleAnimatorFighter.controller
+  uploadId: 94043

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a820354d6666bc04ca4288b219dc900a
+timeCreated: 1446629867
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 49399
+  packageName: ALL 2.5D 84 type character pack
+  packageVersion: 1.0
+  assetPath: Assets/CharacterPack/Sample/SampleAnimatorGnome.controller
+  uploadId: 94043

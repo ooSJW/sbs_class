@@ -5,7 +5,7 @@ public class PlayerPrefsManager : MonoBehaviour
 {
     private const string ItemsKey = "SavedItems";
     private const string GoldKey = "PlayerGold";
-
+    private const string LanguageKey = "SelectedLanguage";
     public int Gold { get; private set; }
 
     // 아이템을 저장하는 구조체
@@ -212,6 +212,17 @@ public class PlayerPrefsManager : MonoBehaviour
     {
         PlayerPrefs.DeleteKey(GoldKey);
         Gold = 0;
+    }
+
+    public void SaveLanguage(string language)
+    {
+        PlayerPrefs.SetString(LanguageKey, language);
+        PlayerPrefs.Save();
+    }
+
+    public string LoadLanguage(string language)
+    {
+        return PlayerPrefs.GetString(LanguageKey, language);
     }
 
     // Update is called once per frame

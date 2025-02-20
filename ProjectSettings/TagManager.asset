@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FxTemporaire
   - Treasure
+  - monsterFire
+  - characterFire
   layers:
   - Default
   - TransparentFX

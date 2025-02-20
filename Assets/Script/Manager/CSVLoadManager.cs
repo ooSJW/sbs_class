@@ -82,6 +82,13 @@ public class CSVLoadManager : MonoBehaviour
         return null;
     }
 
+    public ShopItemInfo FindShopItemInfo(int type)
+    {
+        foreach (ShopItemInfo info in shopitemInfo)
+            if (int.Parse(info.itemID) == type) return info;
+        return null;
+    }
+
     public List<MonsterInfo> GetMonsterList()
     {
         return monsterInfo;

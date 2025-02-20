@@ -3,8 +3,10 @@ using UnityEngine;
 public enum UIElement
 {
     NONE,
-    INVENTORY,
     TOPUI,
+    INVENTORY,
+    SHOP,
+    OPTION,
 }
 
 public class RefreshElement : MonoBehaviour
@@ -20,6 +22,11 @@ public class RefreshElement : MonoBehaviour
     virtual protected void SetElementToManager()
     {
         GameManager.Instance.SetElementToManager(element, this);
+    }
+
+    public void CloseBtn()
+    {
+        gameObject.SetActive(false);
     }
 
     virtual public void RefreshUI()

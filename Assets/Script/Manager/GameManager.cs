@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //DontDestroyOnLoad(gameObject);
+        string language = prefsManager.LoadLanguage("jp");
+        Debug.Log("Select Language : " + language);
     }
 
     public void SetElementToManager(UIElement element, RefreshElement uiObject)
