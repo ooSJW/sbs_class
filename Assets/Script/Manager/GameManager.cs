@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public PlayerPrefsManager prefsManager;
     public ItemIconResource itemIconResource;
     public ShopIconResource shopIconResource;
+    public LocalizationManager localMng;
 
     eScene currenScene = eScene.LOBBY;
 
