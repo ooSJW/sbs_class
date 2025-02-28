@@ -997,42 +997,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fire_red_ball_transparent (1)_0: 2531088068471675840
-      fire_red_ball_transparent (1)_1: -4375554851668595015
-      fire_red_ball_transparent (1)_10: 5446053057056477176
-      fire_red_ball_transparent (1)_11: -7635583796472800800
-      fire_red_ball_transparent (1)_12: -9005280477053623999
-      fire_red_ball_transparent (1)_13: 9121666390514161209
-      fire_red_ball_transparent (1)_14: -1739960414806903199
-      fire_red_ball_transparent (1)_15: -6362637601813162249
-      fire_red_ball_transparent (1)_16: -8225152811905922999
-      fire_red_ball_transparent (1)_17: -7714263085093001676
-      fire_red_ball_transparent (1)_18: 6554935248940281901
-      fire_red_ball_transparent (1)_19: -7525411580579122784
-      fire_red_ball_transparent (1)_2: -7563497359385104888
-      fire_red_ball_transparent (1)_20: -496858445788263533
-      fire_red_ball_transparent (1)_21: 8525865102256511493
-      fire_red_ball_transparent (1)_22: 6015310080428177156
-      fire_red_ball_transparent (1)_23: -5077808343074018425
-      fire_red_ball_transparent (1)_24: -3169783124212831911
-      fire_red_ball_transparent (1)_25: -5115852701943072619
-      fire_red_ball_transparent (1)_26: -3705959657903960774
-      fire_red_ball_transparent (1)_27: 7758204376804066008
-      fire_red_ball_transparent (1)_28: 5911991353274894950
-      fire_red_ball_transparent (1)_29: 1985558980643751579
-      fire_red_ball_transparent (1)_3: 2095578076306382680
-      fire_red_ball_transparent (1)_30: 1671519460386865568
-      fire_red_ball_transparent (1)_31: -5502529504239836996
-      fire_red_ball_transparent (1)_32: 8475953802338067349
-      fire_red_ball_transparent (1)_33: 5516307510872858578
-      fire_red_ball_transparent (1)_34: -5013858986274980011
-      fire_red_ball_transparent (1)_4: 4285104646310807115
-      fire_red_ball_transparent (1)_5: 4382925600489302529
-      fire_red_ball_transparent (1)_6: 4402329038869416061
-      fire_red_ball_transparent (1)_7: -8315116712043997939
-      fire_red_ball_transparent (1)_8: -3922086033380303105
-      fire_red_ball_transparent (1)_9: 2533096136164428212
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

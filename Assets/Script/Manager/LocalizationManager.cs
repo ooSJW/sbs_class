@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LocalizationManager : MonoBehaviour
 {
-    private Dictionary<string, Dictionary<string, string>> localizedText = new
+    private Dictionary<string, Dictionary<string, string>> localizedText = new 
         Dictionary<string, Dictionary<string, string>>();
 
     private string currentLanguage = "ko";
@@ -11,7 +11,7 @@ public class LocalizationManager : MonoBehaviour
     {
         LoadLocalizationData("Local_Text");
     }
-
+    
     public string GetLanguageCode()
     {
         SystemLanguage systemLanguage = Application.systemLanguage;
@@ -34,14 +34,13 @@ public class LocalizationManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     void LoadLocalizationData(string fileName)
     {
-        // 현지화
         TextAsset file = Resources.Load<TextAsset>(fileName);
-        if (file == null)
+        if(file == null)
         {
             Debug.LogError("Localization file not found!");
             return;
@@ -50,33 +49,30 @@ public class LocalizationManager : MonoBehaviour
         string[] lines = file.text.Split('\n');
         string[] headers = lines[0].Split(',');
 
-        for (int i = 1; i < lines.Length; i++)
+        for(int i = 1; i < lines.Length; i++)
         {
             string[] row = lines[i].Split(',');
 
             if (row.Length < headers.Length)
-                continue; // 빈 줄 무시 (예외처리)
+                continue; // 빈 줄 무시
 
             // "en" 열을 키로 사용
             string key = row[3].Trim(); // 공백 문자 제거
             Dictionary<string, string> translations = new Dictionary<string, string>();
 
             // 언어별 번역 추가(ko, en, jp)
-            for (int j = 2; j < headers.Length; j++) // ID와 Name 건너띄고 ko부터 시작
+            for(int j = 2; j < headers.Length; j++) // ID와 Name 건너띄고 ko부터 시작
             {
-                // j가 2일 때 translations.Add("ko".Trim(), "상점".Trim()); 과 같음
                 translations[headers[j].Trim()] = row[j].Trim();
             }
-            // 영어를 키값으로 설정했기 때문에
-            // localizedText["Store"] = translations;과 같음
-            // 즉 localizedText["Store"]["ko"] == "상점" 이 나옴.
+
             localizedText[key] = translations;
         }
     }
 
     public string GetLocalizedText(string key)
     {
-        if (localizedText.ContainsKey(key) && localizedText[key].ContainsKey(currentLanguage))
+        if(localizedText.ContainsKey(key) && localizedText[key].ContainsKey(currentLanguage))
         {
             return localizedText[key][currentLanguage];
         }
@@ -85,7 +81,7 @@ public class LocalizationManager : MonoBehaviour
 
     public void SetLanguage(string language)
     {
-        if (localizedText.Count > 0 && localizedText.ContainsKey("Store") &&
+        if(localizedText.Count > 0 && localizedText.ContainsKey("Store") &&
             localizedText["Store"].ContainsKey(language))
         {
             currentLanguage = language;
@@ -99,6 +95,6 @@ public class LocalizationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

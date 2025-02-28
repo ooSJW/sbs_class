@@ -29,6 +29,11 @@ public class LobbyBtn : MonoBehaviour
         popup_inst.OptionPopupOpen();
     }
 
+    public void MercenaryPopupOpen()
+    {
+        popup_inst.MercenaryPopupOpen();
+    }
+
     // Update is called once per frame
     void Update()
     {

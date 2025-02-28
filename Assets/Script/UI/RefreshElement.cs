@@ -7,6 +7,7 @@ public enum UIElement
     INVENTORY,
     SHOP,
     OPTION,
+    MERCENARY,
 }
 
 public class RefreshElement : MonoBehaviour
@@ -15,8 +16,8 @@ public class RefreshElement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // »ý¼ºµÉ¶§ GameManagerÀÇ UI¸ñ·Ï Dictionary¿¡ µî·Ï
-        // »ó¼Ó Ã³¸® ½Ã¿¡ ¾î¶² Á¾·ùÀÇ UIÀÎÁö ¼ÂÆÃ ÇÊ¿ä
+        // ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ GameManagerï¿½ï¿½ UIï¿½ï¿½ï¿½ Dictionaryï¿½ï¿½ ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Ã¿ï¿½ ï¿½î¶² ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½
     }
 
     virtual protected void SetElementToManager()

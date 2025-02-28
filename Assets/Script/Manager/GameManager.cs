@@ -21,9 +21,9 @@ class MyCharState
 
 public class GameManager : MonoBehaviour
 {
-    // ³» ÀÎº¥Åä¸®¿¡ µé¾î ÀÖ´Â ¾ÆÀÌÅÛ Á¤º¸
-    // ³»°¡ ÇØ¾ß ÇÒ Äù½ºÆ® Á¤º¸
-    // ³» Ä³¸¯ÅÍ ÇöÀç Á¤º¸
+    // ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public CSVLoadManager csvloadManager;
     public PlayerPrefsManager prefsManager;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     List<ItemInfo> iteminfoList = new List<ItemInfo>();
 
-    // Lobby ¿¡ °¡Áö°í ÀÖ´Â ÆË¾÷ UI
+    // Lobby ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ë¾ï¿½ UI
 
     Dictionary<UIElement, RefreshElement> UI_ElementList 
         = new Dictionary<UIElement, RefreshElement>();
@@ -56,11 +56,11 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ¾ÀÀÌ ¹Ù²î¾îµµ ÆÄ±«µÇÁö ¾Êµµ·Ï ¼³Á¤
+            DontDestroyOnLoad(gameObject); // ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½îµµ ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
-            Destroy(gameObject); // ±âÁ¸ ÀÎ½ºÅÏ½º°¡ ÀÖÀ¸¸é »õ·Î »ı¼ºµÈ °ÍÀ» ÆÄ±«
+            Destroy(gameObject); // ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½
         }
     }
 
@@ -70,6 +70,17 @@ public class GameManager : MonoBehaviour
         //DontDestroyOnLoad(gameObject);
         string language = prefsManager.LoadLanguage("jp");
         Debug.Log("Select Language : " + language);
+
+        // ì‹œë‚˜ë¦¬ì˜¤ ì •ë³´ë¥¼ ì½ì–´ì™€ì„œ í˜„ì¬ ì½ì–´ë“¤ì–´ì•¼ í•  
+        // ì‹œë‚˜ë¦¬ì˜¤ ì •ë³´ê°€ ìˆë‹¤ë©´ íŒì—…ì„ ë„ìš´ë‹¤.
+        int chapter;
+        bool progress;
+        prefsManager.LoadChapterInfo(out chapter,out progress);
+        if(progress == false)
+        {
+            Debug.Log("ëŒ€ì‚¬ì°½ ì—´ê¸°");
+            PopupInstance.Instance.ScenarioPopupOpen();
+        }
     }
 
     public void SetElementToManager(UIElement element, RefreshElement uiObject)
@@ -85,7 +96,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("UI Element exist : " + element);
         }
     }
-    // °»½ÅÇÏ°í ½ÍÀº UI Ã³¸® ÇÔ¼ö
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ UI Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½
     public void RefreshUIElement(UIElement element)
     {
         UI_ElementList[element].RefreshUI();
@@ -128,7 +139,7 @@ public class GameManager : MonoBehaviour
     
     public void AddItem(GameObject item)
     {
-        // PlayerPrefs¿¡ ¾ÆÀÌÅÛ ÀúÀå
+        // PlayerPrefsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     // Update is called once per frame

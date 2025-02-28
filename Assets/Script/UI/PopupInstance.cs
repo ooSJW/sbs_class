@@ -5,32 +5,34 @@ using UnityEngine.UI;
 
 public enum popup_index
 {
-    INVEN_POPUP = 0,
-    INVEN_ITEM_POPUP,
-    SHOP_POPUP,
-    SHOP_ITEM_POPUP,
-    DUNGEON_SELECT_POPUP,
-    QUEST_POPUP,
-    OPTION_POPUP,
+    INVEN_POPUP = 0,        // ì¸ë²¤í† ë¦¬ íŒì—…
+    INVEN_ITEM_POPUP,       // ì¸ë²¤í† ë¦¬ ì•„ì´í…œ íŒì—…
+    SHOP_POPUP,             // ìƒì  íŒì—…
+    SHOP_ITEM_POPUP,        // ìƒì  ì•„ì´í…œ íŒì—…
+    DUNGEON_SELECT_POPUP,   // ë˜ì „ ì„ íƒ íŒì—…
+    QUEST_POPUP,            // í€˜ìŠ¤íŠ¸ íŒì—…
+    OPTION_POPUP,           // ì˜µì…˜ íŒì—…
+    MERCENARY_POPUP,        // ìš©ë³‘ íŒì—…
+    SCENARIO_POPUP,         // ì‹œë‚˜ë¦¬ì˜¤ íŒì—…
 }
 
 public class PopupInstance : MonoBehaviour
 {
-    // Lobby ¿¡ °¡Áö°í ÀÖ´Â ÆË¾÷ UI
-    //public GameObject inventoryPopup;
-    //public GameObject inventoryitemPopup;
-    //public GameObject shopPopup;
-    //public GameObject shopitemPopup;
-    //public GameObject dungeonSelectPopup;
-    //public GameObject questPopup;
-    //public GameObject optionPopup;
+    // ë¡œë¹„ì— ì¡´ì¬í•˜ëŠ” íŒì—… UI
+    //public GameObject inventoryPopup;         // ì¸ë²¤í† ë¦¬ íŒì—…
+    //public GameObject inventoryitemPopup;     // ì¸ë²¤í† ë¦¬ ì•„ì´í…œ íŒì—…
+    //public GameObject shopPopup;              // ìƒì  íŒì—…
+    //public GameObject shopitemPopup;          // ìƒì  ì•„ì´í…œ íŒì—…
+    //public GameObject dungeonSelectPopup;     // ë˜ì „ ì„ íƒ íŒì—…
+    //public GameObject questPopup;             // í€˜ìŠ¤íŠ¸ íŒì—…
+    //public GameObject optionPopup;            // ì˜µì…˜ íŒì—…
 
-    public GameObject[] popups;
+    public GameObject[] popups;                 // íŒì—… ë°°ì—´
 
-    public RectTransform inventoryListcontent; // ÇÁ¸®ÆÕÀÌ ¿¬°áµÉ ºÎ¸ğ ¿ÀºêÁ§Æ®
-    public GameObject item_prefab; // ÀÎº¥Åä¸® ½ºÅ©·Ñ¿¡ Ç¥½ÃÇÒ ¾ÆÀÌÅÛ ÇÁ¸®ÆÕ
-    public RectTransform shopListcontent;
-    public GameObject shop_item_prefab;
+    public RectTransform inventoryListcontent;  // ì¸ë²¤í† ë¦¬ ë¦¬ìŠ¤íŠ¸ì˜ ë¶€ëª¨ ì»´í¬ë„ŒíŠ¸
+    public GameObject item_prefab;              // ì¸ë²¤í† ë¦¬ ìŠ¤í¬ë¡¤ì— í‘œì‹œí•  ì•„ì´í…œ í”„ë¦¬íŒ¹
+    public RectTransform shopListcontent;       // ìƒì  ë¦¬ìŠ¤íŠ¸ì˜ ë¶€ëª¨ ì»´í¬ë„ŒíŠ¸
+    public GameObject shop_item_prefab;         // ìƒì  ì•„ì´í…œ í”„ë¦¬íŒ¹
 
     private GameManager gameMng_Instance;
 
@@ -49,7 +51,7 @@ public class PopupInstance : MonoBehaviour
         return popups[(int)index];
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // StartëŠ” MonoBehaviourê°€ ìƒì„±ëœ í›„ ì²« Update ì‹¤í–‰ ì „ì— í•œ ë²ˆ í˜¸ì¶œë©ë‹ˆë‹¤.
     void Start()
     {
         gameMng_Instance = GameManager.Instance;
@@ -68,7 +70,7 @@ public class PopupInstance : MonoBehaviour
         if (questPopup != null) questPopup.SetActive(false);
         */
 
-        for( int i = 0; i < popups.Length; i++)
+        for (int i = 0; i < popups.Length; i++)
         {
             if (popups[i] != null) popups[i].SetActive(false);
         }
@@ -83,6 +85,16 @@ public class PopupInstance : MonoBehaviour
     public void OptionPopupOpen()
     {
         popups[(int)popup_index.OPTION_POPUP].SetActive(true);
+    }
+
+    public void MercenaryPopupOpen()
+    {
+        popups[(int)popup_index.MERCENARY_POPUP].SetActive(true);
+    }
+
+    public void ScenarioPopupOpen()
+    {
+        popups[(int)popup_index.SCENARIO_POPUP].SetActive(true);
     }
 
     public void RefreshInventory()
@@ -101,9 +113,9 @@ public class PopupInstance : MonoBehaviour
             itemobj.transform.GetChild(0).
                 GetComponent<Image>().sprite = gameMng_Instance.GetItemTypeSprite(item.Type);
 
-            // ¾ÆÀÌÅÛÀÇ Á¾·ù ¹øÈ£ ¼ÂÆÃ
+            // ì•„ì´í…œì˜ íƒ€ì… ë²ˆí˜¸ ì„¤ì •
             itemobj.GetComponent<ItemInfoBtn>().SetItemType(item.Type);
-            // ¾ÆÀÌÅÛ Á¦°Å¸¦ À§ÇÑ ¾ÆÀÌÅÛ ¼ÒÀ¯ ¹øÈ£ ¼ÂÆÃ
+            // í”Œë ˆì´ì–´ ì†Œìœ  ì•„ì´í…œì˜ ê³ ìœ  ë²ˆí˜¸ ì„¤ì •
             itemobj.GetComponent<ItemInfoBtn>().SetItemOwnId(item.Id);
 
             ItemInfo info = gameMng_Instance.csvloadManager.FindItemInfo(item.Type);
@@ -114,25 +126,22 @@ public class PopupInstance : MonoBehaviour
 
             itemobj.transform.localScale = new Vector3(1, 1, 1);
         }
-
     }
 
     public void InventoryPopupOpen()
     {
-        // 2¹ø ¾ÆÀÌÅÛ Á¦°Å Å×½ºÆ®
+        // 2ë²ˆ ì•„ì´í…œ ì‚­ì œ í…ŒìŠ¤íŠ¸
         //prefsManager.RemoveItem(2);
 
-        // csvÁ¤º¸ ¸Å´ÏÀú¿¡¼­ °¡Á®¿À±â
+        // CSVì—ì„œ ë¡œë“œëœ ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸
         List<ItemInfo> itemList = gameMng_Instance.csvloadManager.GetItemList();
 
         foreach (ItemInfo info in itemList)
         {
-            //Debug.Log("item_number : " + info.item_number +" ability : "+ info.ability);
+            //Debug.Log("ì•„ì´í…œ ë²ˆí˜¸ : " + info.item_number + " ëŠ¥ë ¥ : " + info.ability);
         }
 
-
-
-        // playerPrefs¿¡ ³»°¡ ¼ÒÀ¯ÇÑ ¾ÆÀÌÅÛ Á¤º¸ °¡Á®¿À±â
+        // PlayerPrefsì— ì €ì¥ëœ í”Œë ˆì´ì–´ì˜ ì•„ì´í…œ ë¦¬ìŠ¤íŠ¸ ê°€ì ¸ì˜¤ê¸°
         HashSet<PlayerPrefsManager.Item> inventoryList = gameMng_Instance.prefsManager.GetItemListInfo();
 
         /*foreach(Transform child in content)
@@ -150,9 +159,9 @@ public class PopupInstance : MonoBehaviour
                 itemobj.transform.GetChild(0).
                     GetComponent<Image>().sprite = gameMng_Instance.GetItemTypeSprite(item.Type);
 
-                // ¾ÆÀÌÅÛÀÇ Á¾·ù ¹øÈ£ ¼ÂÆÃ
+                // ì•„ì´í…œì˜ íƒ€ì… ë²ˆí˜¸ ì„¤ì •
                 itemobj.GetComponent<ItemInfoBtn>().SetItemType(item.Type);
-                // ¾ÆÀÌÅÛ Á¦°Å¸¦ À§ÇÑ ¾ÆÀÌÅÛ ¼ÒÀ¯ ¹øÈ£ ¼ÂÆÃ
+                // í”Œë ˆì´ì–´ ì†Œìœ  ì•„ì´í…œì˜ ê³ ìœ  ë²ˆí˜¸ ì„¤ì •
                 itemobj.GetComponent<ItemInfoBtn>().SetItemOwnId(item.Id);
 
                 ItemInfo info = gameMng_Instance.csvloadManager.FindItemInfo(item.Type);
@@ -165,9 +174,9 @@ public class PopupInstance : MonoBehaviour
             }
         }
 
-        // ³»°¡ ¼ÒÀ¯ÇÑ ¾ÆÀÌÅÛÀ» csvÁ¤º¸·Î ¼ÂÆÃ
+        // í˜„ì¬ ë³´ìœ í•œ ì•„ì´í…œì„ CSV ë°ì´í„°ì™€ ë¹„êµ
 
-        // UI ¾ÆÀÌÅÛ ÆË¾÷ ¿¬µ¿ÇÏ±â
+        // UI íŒì—…ì°½ í‘œì‹œí•˜ê¸°
 
         //inventoryPopup.SetActive(true);
         popups[(int)popup_index.INVEN_POPUP].SetActive(true);
@@ -179,14 +188,13 @@ public class PopupInstance : MonoBehaviour
 
         if (shopListcontent.childCount <= 0)
         {
-
             foreach (ShopItemInfo shopiteminfo in shopinfoList)
             {
                 GameObject itemobj = Instantiate(shop_item_prefab);
                 itemobj.transform.GetChild(0).
                     GetComponent<Image>().sprite = gameMng_Instance.GetShoptypeSprite(int.Parse(shopiteminfo.itemID));
 
-                //±¸¸Å ½ºÅ©¸³Æ® Á¤º¸
+                // ìƒì  ìŠ¤í¬ë¦½íŠ¸ ì„¤ì •
                 int itemID = int.Parse(shopiteminfo.itemID);
                 itemobj.GetComponent<ShopInfoBtn>().SetItemType(itemID);
 
@@ -211,7 +219,7 @@ public class PopupInstance : MonoBehaviour
         showObject.SetActive(true);
     }
 
-    // Update is called once per frame
+    // UpdateëŠ” ë§¤ í”„ë ˆì„ë§ˆë‹¤ í˜¸ì¶œë©ë‹ˆë‹¤.
     void Update()
     {
         

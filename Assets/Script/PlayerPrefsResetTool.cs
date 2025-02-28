@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 
@@ -11,16 +12,17 @@ public class PlayerPrefsResetTool : EditorWindow
 
     private void OnGUI()
     {
-        GUILayout.Label("PlayerPrefs °ü¸®", EditorStyles.boldLabel);
+        GUILayout.Label("PlayerPrefs ì´ˆê¸°í™”", EditorStyles.boldLabel);
 
-        if (GUILayout.Button("¸ğµç PlayerPrefs »èÁ¦"))
+        if (GUILayout.Button("PlayerPrefs ì‚­ì œ"))
         {
-            if (EditorUtility.DisplayDialog("°æ°í", "¸ğµç PlayerPrefs µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?", "¿¹", "¾Æ´Ï¿À"))
+            if (EditorUtility.DisplayDialog("í™•ì¸", "ì •ë§ë¡œ ëª¨ë“  PlayerPrefs ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì˜ˆ", "ì•„ë‹ˆìš”"))
             {
                 PlayerPrefs.DeleteAll();
                 PlayerPrefs.Save();
-                Debug.Log("¸ğµç PlayerPrefs µ¥ÀÌÅÍ°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.");
+                Debug.Log("ëª¨ë“  PlayerPrefs ë°ì´í„°ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
             }
         }
     }
 }
+#endif

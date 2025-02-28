@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class ItemInfo
@@ -45,29 +46,43 @@ public class ShopItemInfo
     public int price;
 }
 
+public class ScenarioInfo
+{
+    public int ID;
+    public int Chapter;
+    public string Character;
+    public int CharacterIdx;
+    public string Dialogue;
+    public int iconIndex;
+}
+
 public class CSVLoadManager : MonoBehaviour
 {
     private List<List<string>> csvData = new List<List<string>>();
 
-    private List<ItemInfo> itemInfo = new List<ItemInfo>();         // ¾ÆÀÌÅÛ Á¤º¸
-    private List<MonsterInfo> monsterInfo = new List<MonsterInfo>();// ¸ó½ºÅÍ Á¤º¸
-    private List<RatioInfo> ratioInfo = new List<RatioInfo>();      // È®·ü Á¤º¸
-    private List<QuestInfo> questInfo = new List<QuestInfo>();      // Äù½ºÆ® Á¤º¸
-    private List<ShopItemInfo> shopitemInfo = new List<ShopItemInfo>(); // ¼¥ ¾ÆÀÌÅÛ Á¤º¸
+    private List<ItemInfo> itemInfo = new List<ItemInfo>();         // ì•„ì´í…œ ì •ë³´
+    private List<MonsterInfo> monsterInfo = new List<MonsterInfo>();// ëª¬ìŠ¤í„° ì •ë³´
+    private List<RatioInfo> ratioInfo = new List<RatioInfo>();      // í™•ë¥  ì •ë³´
+    private List<QuestInfo> questInfo = new List<QuestInfo>();      // í€˜ìŠ¤íŠ¸ ì •ë³´
+    private List<ShopItemInfo> shopitemInfo = new List<ShopItemInfo>(); // ìƒì  ì•„ì´í…œ ì •ë³´
+    private List<ScenarioInfo> scenarioInfo = new List<ScenarioInfo>(); // ì‹œë‚˜ë¦¬ì˜¤ ì •ë³´
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
-        // ¾ÆÀÌÅÛ Á¤º¸ ÀĞ¾î¿À±â
+        // ì•„ì´í…œ ì •ë³´ ì½ì–´ì˜¤ê¸°
         LoadItemCsv();
-        // ¸ó½ºÅÍ Á¤º¸ ÀĞ¾î¿À±â
+        // ëª¬ìŠ¤í„° ì •ë³´ ì½ì–´ì˜¤ê¸°
         LoadMonsterCsv();
-        // È®·ù Á¤º¸ ÀĞ¾î¿À±â
+        // í™•ë¥  ì •ë³´ ì½ì–´ì˜¤ê¸°
         LoadDropRatioCsv();
-        // Äù½ºÆ® Á¤º¸ ÀĞ¾î¿À±â
+        // í€˜ìŠ¤íŠ¸ ì •ë³´ ì½ì–´ì˜¤ê¸°
         LoadQuestCsv();
-        // ¼¥ ¾ÆÀÌÅÛ Á¤º¸ ÀĞ¾î¿À±â
+        // ìƒì  ì•„ì´í…œ ì •ë³´ ì½ì–´ì˜¤ê¸°
         LoadShopItemCsv();
+        // ì‹œë‚˜ë¦¬ì˜¤ ì •ë³´ ì½ì–´ì˜¤ê¸°
+        LoadScenarioCsv();
     }
 
     public List<ItemInfo> GetItemList()
@@ -104,6 +119,18 @@ public class CSVLoadManager : MonoBehaviour
         return shopitemInfo;
     }
 
+    public List<ScenarioInfo> GetScenarioInfoList()
+    {
+        return scenarioInfo;
+    }
+
+    public List<QuestInfo> GetQuestInfoList()
+    {
+        return questInfo;
+    }
+
+
+
     void LoadItemCsv()
     {
         LoadCsv("Item", itemInfo, (row, info) =>
@@ -118,7 +145,7 @@ public class CSVLoadManager : MonoBehaviour
                 switch (field_num)
                 {
                     case 0: item.item_number = int.Parse(field); break;
-                    case 1: item.name = field; break; // ÀÌ¸§
+                    case 1: item.name = field; break; // ì´ë¦„
                     case 2: item.ability = int.Parse(field); break;
                     case 3: item.sellprice = int.Parse(field); break;
                 }
@@ -140,7 +167,7 @@ public class CSVLoadManager : MonoBehaviour
                 //Debug.Log("field : " + field);
                 switch (field_num)
                 {
-                    // ÇÊ¿äÇÑ µ¥ÀÌÅÍ ÆÄ½Ì Ãß°¡
+                    // í•„ìš”í•œ ë°ì´í„° íŒŒì‹± ì¶”ê°€
                     case 0: monster.id = int.Parse(field); break;
                     case 1: monster.name = field; break;
                     case 2: monster.attack = int.Parse(field); break;
@@ -167,17 +194,40 @@ public class CSVLoadManager : MonoBehaviour
                 Debug.Log("field : " + field);
                 switch (field_num)
                 {
-                    // ÇÊ¿äÇÑ µ¥ÀÌÅÍ ÆÄ½Ì Ãß°¡
+                    // í•„ìš”í•œ ë°ì´í„° íŒŒì‹± ì¶”ê°€
                     case 0: shopiteminfo.ID = int.Parse(field); break;
                     case 1: shopiteminfo.name = field; break;
                     case 2: shopiteminfo.itemID = field; break;
                     case 3: shopiteminfo.price = int.Parse(field); break;
-
                 }
                 field_num++;
             }
-
         });
+    }
+
+    void LoadScenarioCsv()
+    {
+        LoadCsv("Scenario", scenarioInfo, (row, info) =>
+    {
+        ScenarioInfo scenario = info as ScenarioInfo;
+        if (scenario == null) return;
+
+        int field_num = 0;
+        foreach (string field in row)
+        {
+            //Debug.Log("field : " + field);
+            switch (field_num)
+            {
+                case 0: scenario.ID = int.Parse(field); break;
+                case 1: scenario.Chapter = int.Parse(field); break;
+                case 2: scenario.Character = field; break;
+                case 3: scenario.CharacterIdx = int.Parse(field); break;
+                case 4: scenario.Dialogue = field; break;
+                case 5: scenario.iconIndex = int.Parse(field); break;
+            }
+            field_num++;
+        }
+    });
     }
 
     void LoadDropRatioCsv()
@@ -193,7 +243,7 @@ public class CSVLoadManager : MonoBehaviour
                 //Debug.Log("field : " + field);
                 switch (field_num)
                 {
-                    // ÇÊ¿äÇÑ µ¥ÀÌÅÍ ÆÄ½Ì Ãß°¡
+                    // í•„ìš”í•œ ë°ì´í„° íŒŒì‹± ì¶”ê°€
                     case 0: ratioinfo.id = int.Parse(field); break;
                     case 1: ratioinfo.name = field; break;
                     case 2: ratioinfo._1 = ulong.Parse(field); break;
@@ -219,20 +269,20 @@ public class CSVLoadManager : MonoBehaviour
         TextAsset csvFile = Resources.Load<TextAsset>(resourceName);
         if (csvFile != null)
         {
-            Debug.Log($"{resourceName} ÆÄÀÏÀÌ Á¸ÀçÇÕ´Ï´Ù.");
+            Debug.Log($"{resourceName} íŒŒì¼ì„ ë¡œë“œí•©ë‹ˆë‹¤.");
             string[] rows = csvFile.text.Split('\n');
 
             foreach (string row in rows)
             {
-                string[] fields = row.Split(',');
-                List<string> rowData = new List<string>(fields);
+                // ""ë¡œ ê°ì‹¸ì§„ ë‚´ìš©ì—ì„œ ,ë¥¼ ë¶„ë¦¬ í•˜ì§€ ì•Šë„ë¡ ì²˜ë¦¬
+                List<string> rowData = ParseCsvRow(row);
                 csvData.Add(rowData);
             }
 
             int row_num = 0;
             foreach (List<string> row in csvData)
             {
-                if (row_num == 0) // Ã¹ ¹øÂ° Çà(Çì´õ) ½ºÅµ
+                if (row_num == 0) // ì²« ë²ˆì§¸ ì¤„(í—¤ë”) ê±´ë„ˆë›°ê¸°
                 {
                     row_num++;
                     continue;
@@ -241,7 +291,7 @@ public class CSVLoadManager : MonoBehaviour
                 //Debug.Log($"[{row_num}]");
                 T info = new T();
 
-                processRow(row, info); // Àü´ŞµÈ µ¨¸®°ÔÀÌÆ® ½ÇÇà
+                processRow(row, info); // ì œê³µëœ í”„ë¡œì„¸ìŠ¤ë¡œ ë°ì´í„° ì²˜ë¦¬
 
                 dataList.Add(info);
                 row_num++;
@@ -249,8 +299,30 @@ public class CSVLoadManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"{resourceName} ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+            Debug.Log($"{resourceName} íŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
         }
+    }
+
+    // ì •ê·œì‹ì„ ì´ìš©í•œ CSV í–‰ íŒŒì‹± í•¨ìˆ˜
+    List<string> ParseCsvRow(string row)
+    {
+        List<string> fields = new List<string>();
+        string pattern = "\"(.*?)\"|([^,]+)";
+        MatchCollection matches = Regex.Matches(row, pattern);
+
+        foreach (Match match in matches)
+        {
+            if (match.Groups[1].Success) // ë”°ì˜´í‘œë¡œ ê°ì‹¸ì§„ ê°’
+            {
+                fields.Add(match.Groups[1].Value);
+            }
+            else if (match.Groups[2].Success) // ì¼ë°˜ ê°’
+            {
+                fields.Add(match.Groups[2].Value);
+            }
+        }
+
+        return fields;
     }
 
     void Start()

@@ -14,7 +14,7 @@ public class Monster : MonoBehaviour
     {
         if (collision.CompareTag("characterFire"))
         {
-            Debug.Log("monster Ball 충돌");
+            //Debug.Log("monster Ball 충돌");
             bool dead = PlayManager.Instance.SetMonsterHP(1);
             if (dead == true) this.gameObject.SetActive(false);
         }
