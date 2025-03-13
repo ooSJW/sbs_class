@@ -21,7 +21,8 @@ public class LobbyBtn : MonoBehaviour
 
     public void DungeonSelectPopupOpen()
     {
-        popup_inst.DungeonSelectPopupOpen();
+        GameManager.Instance.storyManager.DoNextStory();
+        //popup_inst.DungeonSelectPopupOpen();
     }
 
     public void OptionPopupOpen()

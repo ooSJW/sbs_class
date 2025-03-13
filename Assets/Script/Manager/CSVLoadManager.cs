@@ -49,11 +49,12 @@ public class ShopItemInfo
 public class ScenarioInfo
 {
     public int ID;
-    public int Chapter;
+    public int Story;
     public string Character;
     public int CharacterIdx;
     public string Dialogue;
     public int iconIndex;
+    public ActType eventType;
 }
 
 public class CSVLoadManager : MonoBehaviour
@@ -219,11 +220,12 @@ public class CSVLoadManager : MonoBehaviour
             switch (field_num)
             {
                 case 0: scenario.ID = int.Parse(field); break;
-                case 1: scenario.Chapter = int.Parse(field); break;
+                case 1: scenario.Story = int.Parse(field); break;
                 case 2: scenario.Character = field; break;
                 case 3: scenario.CharacterIdx = int.Parse(field); break;
                 case 4: scenario.Dialogue = field; break;
                 case 5: scenario.iconIndex = int.Parse(field); break;
+                case 6: scenario.eventType = (ActType)int.Parse(field); break;
             }
             field_num++;
         }

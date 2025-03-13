@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-
 public enum eScene
 {
     LOBBY,
@@ -21,32 +20,27 @@ class MyCharState
 
 public class GameManager : MonoBehaviour
 {
-    // �� �κ��丮�� ��� �ִ� ������ ����
-    // ���� �ؾ� �� ����Ʈ ����
-    // �� ĳ���� ���� ����
+    // 한 인벤토리에 들어 있는 아이템 정보
+    // 싱글톤 패턴으로 하나만 존재하도록 처리
+    // 내 캐릭터 상태 정보
 
     public CSVLoadManager csvloadManager;
     public PlayerPrefsManager prefsManager;
     public ItemIconResource itemIconResource;
     public ShopIconResource shopIconResource;
+    public PortraitResource portraitResource;
     public LocalizationManager localMng;
+    public StoryManager storyManager;    
 
     eScene currenScene = eScene.LOBBY;
 
     List<ItemInfo> iteminfoList = new List<ItemInfo>();
 
-    // Lobby �� ������ �ִ� �˾� UI
+    // Lobby 에 상시 떠 있는 팝업 UI
 
     Dictionary<UIElement, RefreshElement> UI_ElementList 
         = new Dictionary<UIElement, RefreshElement>();
-
-    //private GameObject inventoryPopup;
-    //private GameObject iteminfoPopup;
-    //private GameObject dungeonSelectPopup;
-    //private GameObject questPopup;
-    //private GameObject shopPopup;
-    
-    
+        
     public static GameManager Instance { get; private set; }
 
     //public PopupInstance popup_Inst;
@@ -56,31 +50,31 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ���� �ٲ� �ı����� �ʵ��� ����
+            DontDestroyOnLoad(gameObject); // 씬이 바뀌어도 파괴되지 않도록 설정
         }
         else
         {
-            Destroy(gameObject); // ���� �ν��Ͻ��� ������ ���� ������ ���� �ı�
+            Destroy(gameObject); // 이미 인스턴스가 존재하면 새로 만든 객체를 파괴
         }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //DontDestroyOnLoad(gameObject);
+        
+
+        
+    }
+
+    public void SceneInit()
+    {
+
         string language = prefsManager.LoadLanguage("jp");
         Debug.Log("Select Language : " + language);
 
-        // 시나리오 정보를 읽어와서 현재 읽어들어야 할 
-        // 시나리오 정보가 있다면 팝업을 띄운다.
-        int chapter;
-        bool progress;
-        prefsManager.LoadChapterInfo(out chapter,out progress);
-        if(progress == false)
-        {
-            Debug.Log("대사창 열기");
-            PopupInstance.Instance.ScenarioPopupOpen();
-        }
+        
+        storyManager.DoNextStory();
+        
     }
 
     public void SetElementToManager(UIElement element, RefreshElement uiObject)
@@ -96,13 +90,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("UI Element exist : " + element);
         }
     }
-    // �����ϰ� ���� UI ó�� �Լ�
+    
+    // 갱신하고 싶은 UI 처리 함수
     public void RefreshUIElement(UIElement element)
     {
         UI_ElementList[element].RefreshUI();
     }
-
-    
 
     public Sprite GetItemTypeSprite(int type)
     {
@@ -136,10 +129,14 @@ public class GameManager : MonoBehaviour
 
         return shopIconResource.iconArray[icon];
     }
-    
+
+    public Sprite GetPortraitImage(int type)
+    {
+        return portraitResource.portraitArray[type];
+    }
     public void AddItem(GameObject item)
     {
-        // PlayerPrefs�� ������ ����
+        // PlayerPrefs에 아이템 저장
     }
 
     // Update is called once per frame

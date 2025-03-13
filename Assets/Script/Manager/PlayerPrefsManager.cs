@@ -1,5 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
+public enum StoryProgress
+{
+    Waiting = 0, //진행 전
+    InProgress = 1, //진행 중
+    Completed = 2, //완료
+}
 
 public class PlayerPrefsManager : MonoBehaviour
 {
@@ -196,34 +204,44 @@ public class PlayerPrefsManager : MonoBehaviour
         Gold = 0;
     }
 
-    // 챕터 번호와 진행 여부 저장
-    public void SaveChapterInfo(int chapterNumber, bool isInProgress)
+    public void SaveChapterInfo(int chapterNumber, StoryProgress progress)
     {
-        string data = $"{chapterNumber}:{(isInProgress ? 1 : 0)}";
+        string data = $"{chapterNumber}:{(int)progress}";
         PlayerPrefs.SetString(ChapterInfoKey, data);
         PlayerPrefs.Save();
-        Debug.Log($"저장된 챕터 정보 -> 챕터: {chapterNumber}, 진행 중: {isInProgress}");
+        //Debug.Log($"저장된 챕터 정보 -> 챕터: {chapterNumber}, 진행 상태: {progress}");
     }
 
-    // 챕터 번호와 진행 여부 불러오기
-    public void LoadChapterInfo(out int chapterNumber, out bool isInProgress)
+    public void LoadChapterInfo(out int chapterNumber, out StoryProgress progress)
     {
-        string data = PlayerPrefs.GetString(ChapterInfoKey, "1:0"); // 기본값: 1챕터, 진행 중 아님
+        string data = PlayerPrefs.GetString(ChapterInfoKey, "1:0"); // 기본값: 1챕터, 진행 전
         string[] parts = data.Split(':');
 
-        if (parts.Length == 2 && int.TryParse(parts[0], out chapterNumber) && int.TryParse(parts[1], out int progress))
+        if (parts.Length == 2 &&
+            int.TryParse(parts[0], out chapterNumber) &&
+            int.TryParse(parts[1], out int progressValue))
         {
-            isInProgress = progress == 1;
+            // progressValue가 Enum 범위 내에 있는지 확인
+            if (Enum.IsDefined(typeof(StoryProgress), progressValue))
+            {
+                progress = (StoryProgress)progressValue;
+            }
+            else
+            {
+                chapterNumber = 1;
+                progress = StoryProgress.Waiting;
+            }
         }
         else
         {
             chapterNumber = 1;
-            isInProgress = false;
+            progress = StoryProgress.Waiting;
         }
 
-        Debug.Log($"불러온 챕터 정보 -> 챕터: {chapterNumber}, 진행 중: {isInProgress}");
+        //Debug.Log($"불러온 챕터 정보 -> 챕터: {chapterNumber}, 진행 상태: {progress}");
     }
 
+    [ContextMenu("ResetChapterInfo")]
     // 챕터 정보 초기화
     public void ResetChapterInfo()
     {

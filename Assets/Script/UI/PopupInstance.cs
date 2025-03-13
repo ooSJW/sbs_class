@@ -14,6 +14,8 @@ public enum popup_index
     OPTION_POPUP,           // 옵션 팝업
     MERCENARY_POPUP,        // 용병 팝업
     SCENARIO_POPUP,         // 시나리오 팝업
+    ITEM_USE_POPUP,         // 아이템 사용 팝업
+    NEW_FRIEND_POPUP,       // 신규 친구 팝업
 }
 
 public class PopupInstance : MonoBehaviour
@@ -57,6 +59,9 @@ public class PopupInstance : MonoBehaviour
         gameMng_Instance = GameManager.Instance;
 
         ResetPopupInstance();
+
+        // 팝업 초기화가 진행 된 후에 시나리오 체크
+        GameManager.Instance.SceneInit();
     }
 
     void ResetPopupInstance()
@@ -94,7 +99,24 @@ public class PopupInstance : MonoBehaviour
 
     public void ScenarioPopupOpen()
     {
+        popups[(int)popup_index.SCENARIO_POPUP].GetComponent<ScenarioPopup>().SetChapterIdx();
         popups[(int)popup_index.SCENARIO_POPUP].SetActive(true);
+    }
+
+    public void ItemUsePopupOpen()
+    {
+        popups[(int)popup_index.ITEM_USE_POPUP].SetActive(true);
+    }
+
+    public void NewFriendPopupOpen()
+    {
+        popups[(int)popup_index.NEW_FRIEND_POPUP].SetActive(true);
+    }
+
+
+    public void QuestPopupOpen()
+    {
+        popups[(int)popup_index.QUEST_POPUP].SetActive(true);
     }
 
     public void RefreshInventory()
@@ -222,6 +244,6 @@ public class PopupInstance : MonoBehaviour
     // Update는 매 프레임마다 호출됩니다.
     void Update()
     {
-        
+
     }
 }
